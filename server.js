@@ -8,10 +8,14 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+app.get('/slike', (req, res) => {
     const dataPath = path.join(__dirname, 'images.json');
     const images = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
     res.render('slike', { images });
+});
+
+app.get('/grafikon', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'grafikon.html'));
 });
 
 const PORT = process.env.PORT || 3000;
