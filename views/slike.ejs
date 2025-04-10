@@ -28,7 +28,7 @@
     <% images.forEach(image => { %>
       <figure class="galerija_slika">
         <a href="#lightbox<%= image.id %>">
-          <img src="<%= image.url %>" alt="<%= image.title %>">
+          <img src="<%= image.url %>" alt="<%= image.title %> " loading="lazy">
         </a>
         <figcaption><%= image.title %></figcaption>
       </figure>
